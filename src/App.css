@@ -1,0 +1,301 @@
+@import "tailwindcss";
+
+/* body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #1a1a1a;
+  background-image: url("japanRiver.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #ffffff;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+} */
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Mac window styling with solid background */
+.mac-window {
+  width: 900px;
+  height: 600px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 10px 60px rgba(52, 51, 51, 0.5);
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+/* Window controls (traffic lights) */
+.window-controls {
+  display: flex;
+  padding: 24px 16px;
+  position: relative;
+  z-index: 2;
+}
+
+.control {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.close {
+  background-color: #ff5f56;
+}
+
+.minimize {
+  background-color: #ffbd2e;
+}
+
+.maximize {
+  background-color: #27c93f;
+}
+
+/* Window content layout */
+.window-content {
+  display: flex;
+  flex: 1;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+/* Sidebar styling with frosted glass effect */
+.sidebar {
+  width: 220px;
+  background-color: rgba(40, 40, 40, 0.361);
+  position: relative;
+  z-index: 1;
+  overflow-y: auto;
+  border-right: 1.2px solid #000000;
+}
+
+.sidebar:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  z-index: -1;
+  backdrop-filter: blur(16px);
+  box-shadow: inset 0 0 2000px rgba(67, 65, 65, 0.5); /* Frosted effect */
+}
+
+/* Profile section */
+.profile {
+  display: flex;
+  align-items: start;
+  padding: 8px;
+  margin-bottom: 15px;
+  margin: 4px 12px;
+  cursor: pointer;
+}
+
+.profile.active {
+  cursor: pointer;
+  background-color: rgba(89, 142, 237, 0.8);
+  border-radius: 6px;
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  background-image: url("josie.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.profile-info {
+  text-align: left;
+}
+
+.profile-info h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.profile-info p {
+  font-size: 12px;
+  color: #aaaaaa;
+}
+
+/* Navigation links */
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  padding: 0 8px;
+}
+
+.nav-item {
+  padding: 4px 8px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 8px;
+  margin-bottom: 2px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  margin-right: 5px;
+  margin-bottom: 0;
+}
+
+.nav-item:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+a.nav-item:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.nav-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  margin-right: 8px;
+}
+
+.nav-item.active {
+  background-color: rgba(89, 142, 237, 0.8);
+}
+
+/* Content area styling */
+.content-area {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #35322d;
+}
+
+.main-profile-icon {
+  width: 94px;
+  height: 94px;
+  border-radius: 50%;
+  margin-right: 16px;
+}
+
+.content-body {
+  max-width: 650px;
+}
+
+/* Quick links styling */
+.quick-links {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.quick-links a {
+  text-decoration: none;
+  font-size: 14px;
+  padding: 8px 15px;
+  background-color: rgba(0, 122, 255, 0.1);
+  border-radius: 6px;
+  color: #ffffff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .mac-window {
+    width: 100%;
+    height: 90vh;
+    max-height: none;
+  }
+
+  .window-content {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 0;
+  }
+
+  .profile {
+    padding: 5px 15px 15px;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 0 10px;
+    margin-bottom: 5px;
+  }
+
+  .nav-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+  }
+
+  .content-area {
+    padding: 15px;
+  }
+}
