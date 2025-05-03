@@ -3,7 +3,7 @@ import aboutHome from "./pages/home";
 import postsHome from "./pages/postsHome";
 import curriculumVitae from "./pages/cv";
 import NavItem from "./components/navItem";
-import { FileText, BookOpen, Github } from "lucide-react";
+import { FileText, BookOpen, Github, Linkedin, Mail } from "lucide-react";
 import "./App.css";
 
 function App() {
@@ -34,51 +34,63 @@ function App() {
       url: "https://github.com/josieko",
       isActive: false,
     },
+    {
+      name: "LinkedIn",
+      color: "linear-gradient(135deg,rgb(115, 153, 250),rgb(8, 59, 191))",
+      icon: Linkedin,
+      url: "https://www.linkedin.com/in/jojosieko",
+      isActive: false,
+    },
+    {
+      name: "Email",
+      color: "linear-gradient(135deg,rgb(224, 176, 45),rgb(194, 144, 8))",
+      icon: Mail,
+      url: "mailto:josieko@gmail.com",
+      isActive: false,
+    },
   ];
 
   return (
-    <div className="bg-[url('japanRiver.jpeg')] bg-cover bg-center bg-fixed min-h-screen flex justify-center items-center p-5">
-      <div className="mac-window">
-        <div className="window-content">
-          <div className="sidebar">
-            <div className="window-controls">
-              <div className="control close"></div>
-              <div className="control minimize"></div>
-              <div className="control maximize"></div>
-            </div>
-            <div
-              className={`profile ${currentPage === "about" ? "active" : ""}`}
-              onClick={() => setCurrentPage("about")}
-            >
-              <div className="profile-icon"></div>
-              <div className="flex flex-col items-start">
-                <h4 className="text-white text-md font-medium">Josie Ko</h4>
-                <p className="text-xs text-white font-medium">
-                  Fullstack Developer
-                </p>
-              </div>
-            </div>
-            <nav className="nav-links flex flex-col px-2">
-              {navItems.map((item, index) => (
-                <NavItem
-                  key={index}
-                  name={item.name}
-                  color={item.color}
-                  icon={item.icon}
-                  url={item.url}
-                  isActive={item.isActive}
-                  onClick={item.onClick}
-                />
-              ))}
-            </nav>
+    <div className="mac-window">
+      <div className="window-content">
+        <div className="sidebar">
+          <div className="window-controls">
+            <div className="control close"></div>
+            <div className="control minimize"></div>
+            <div className="control maximize"></div>
           </div>
-
-          <div className="content-area">
-            <div className="content-body">
-              {currentPage === "about" && aboutHome()}
-              {currentPage === "posts" && postsHome()}
-              {currentPage === "cv" && curriculumVitae()}
+          <div
+            className={`profile ${currentPage === "about" ? "active" : ""}`}
+            onClick={() => setCurrentPage("about")}
+          >
+            <div className="profile-icon"></div>
+            <div className="flex flex-col items-start">
+              <h4 className="text-white text-md font-medium">Josie Ko</h4>
+              <p className="text-xs text-white font-medium">
+                Fullstack Developer
+              </p>
             </div>
+          </div>
+          <nav className="nav-links flex flex-col px-2">
+            {navItems.map((item, index) => (
+              <NavItem
+                key={index}
+                name={item.name}
+                color={item.color}
+                icon={item.icon}
+                url={item.url}
+                isActive={item.isActive}
+                onClick={item.onClick}
+              />
+            ))}
+          </nav>
+        </div>
+
+        <div className="content-area">
+          <div className="content-body">
+            {currentPage === "about" && aboutHome()}
+            {currentPage === "posts" && postsHome()}
+            {currentPage === "cv" && curriculumVitae()}
           </div>
         </div>
       </div>

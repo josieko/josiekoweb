@@ -1,21 +1,5 @@
 @import "tailwindcss";
 
-/* body {
-  font-family: "Open Sans", sans-serif;
-  background-color: #1a1a1a;
-  background-image: url("japanRiver.jpeg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: #ffffff;
-  line-height: 1.6;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-} */
-
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -67,10 +51,11 @@
   overflow: hidden;
   position: relative;
   z-index: 1;
-  box-shadow: 0 10px 60px rgba(52, 51, 51, 0.5);
+  box-shadow: 0 10px 60px rgba(102, 99, 99, 0.452);
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  border: 1.5px solid #3a3939;
 }
 
 /* Window controls (traffic lights) */
@@ -144,7 +129,7 @@
 
 .profile.active {
   cursor: pointer;
-  background-color: rgba(89, 142, 237, 0.8);
+  background-color: rgba(166, 165, 164, 0.18);
   border-radius: 6px;
 }
 
@@ -171,56 +156,6 @@
 .profile-info p {
   font-size: 12px;
   color: #aaaaaa;
-}
-
-/* Navigation links */
-.nav-links {
-  display: flex;
-  flex-direction: column;
-  padding: 0 8px;
-}
-
-.nav-item {
-  padding: 4px 8px;
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 14px;
-  border-radius: 8px;
-  margin-bottom: 2px;
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-  margin-right: 5px;
-  margin-bottom: 0;
-}
-
-.nav-item:hover {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.nav-item a {
-  text-decoration: none;
-  color: #ffffff;
-}
-
-a.nav-item:hover {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.nav-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 6px;
-  margin-right: 8px;
-}
-
-.nav-item.active {
-  background-color: rgba(89, 142, 237, 0.8);
 }
 
 /* Content area styling */
