@@ -19,14 +19,14 @@ function App() {
       isActive: currentPage === "cv",
       onClick: () => setCurrentPage("cv"),
     },
-    {
-      name: "Posts",
-      color: "linear-gradient(135deg,rgb(246, 168, 59), #ff5e3a)",
-      icon: BookOpen,
-      url: undefined,
-      isActive: currentPage === "posts",
-      onClick: () => setCurrentPage("posts"),
-    },
+    // {
+    //   name: "Posts",
+    //   color: "linear-gradient(135deg,rgb(246, 168, 59), #ff5e3a)",
+    //   icon: BookOpen,
+    //   url: undefined,
+    //   isActive: currentPage === "posts",
+    //   onClick: () => setCurrentPage("posts"),
+    // },
     {
       name: "GitHub",
       color: "linear-gradient(135deg,rgb(206, 123, 242),rgb(150, 47, 218))",
@@ -41,13 +41,13 @@ function App() {
       url: "https://www.linkedin.com/in/jojosieko",
       isActive: false,
     },
-    {
-      name: "Email",
-      color: "linear-gradient(135deg,rgb(224, 176, 45),rgb(194, 144, 8))",
-      icon: Mail,
-      url: "mailto:josieko@gmail.com",
-      isActive: false,
-    },
+    // {
+    //   name: "Email",
+    //   color: "linear-gradient(135deg,rgb(224, 176, 45),rgb(194, 144, 8))",
+    //   icon: Mail,
+    //   url: "mailto:josieko@gmail.com",
+    //   isActive: false,
+    // },
   ];
 
   return (
