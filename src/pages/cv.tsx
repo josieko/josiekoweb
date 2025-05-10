@@ -144,26 +144,26 @@ export default function curriculumVitae() {
       </section>
 
       <section className="mb-12 px-6">
-        <h2 className="text-2xl font-semibold text-gray-700 dark:text-gray-300 border-b-1 border-white pb-2 mb-6">
+        <h2 className="text-2xl font-semibold text-white border-b-1 border-white pb-2 mb-6">
           Education & Certifications
         </h2>
-        <ul className="list-disc text-left pl-6 space-y-3 text-gray-700 dark:text-gray-300">
-          <li className="dark:text-white transition-colors duration-200">
+        <ul className="list-disc text-left pl-6 space-y-3 text-gray-300">
+          <li className="transition-colors duration-200">
             Engineering Academy Certificate,{" "}
             <span className="font-medium">McKinsey & Company</span> (2023)
           </li>
-          <li className="dark:text-white transition-colors duration-200">
+          <li className="transition-colors duration-200">
             Product Academy Certificate,{" "}
             <span className="font-medium">McKinsey & Company</span> (2023)
           </li>
-          <li className="dark:text-white transition-colors duration-200">
+          <li className="transition-colors duration-200">
             Product Management Certificates,{" "}
             <span className="font-medium">Pendo x Mind the Product</span> (2023)
           </li>
-          <li className="dark:text-white transition-colors duration-200">
+          <li className="transition-colors duration-200">
             CFG Degree in Python, SQL, JavaScript and Product Management (2021)
           </li>
-          <li className="dark:text-white transition-colors duration-200">
+          <li className="transition-colors duration-200">
             BFA Journalism and Social Sciences,{" "}
             <span className="font-medium">Zagreb University</span> (2018-2021)
           </li>
