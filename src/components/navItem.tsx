@@ -29,17 +29,19 @@ const NavItem: React.FC<NavItemProps> = ({
   const content = (
     <>
       <span
-        className="flex justify-center items-center w-6 h-6 rounded-md mr-2"
+        className="flex justify-center items-center w-6 h-6 rounded-md mr-2 mobile-icon"
         style={{ background: color }}
       >
         {IconComponent && <IconComponent size={16} color="#ffffff" />}
       </span>
-      <span className="text-white text-sm whitespace-nowrap">{name}</span>
+      <span className="text-white text-sm whitespace-nowrap mobile-label">
+        {name}
+      </span>
     </>
   );
 
   const tailwindClasses = [
-    "flex items-center py-1 px-2 rounded-sm text-sm whitespace-nowrap mb-1 mx-1 transition-colors",
+    "flex items-center py-1 px-2 rounded-sm text-sm whitespace-nowrap mb-1 mx-1 transition-colors mobile-nav-item",
     isActive ? "bg-blue-200/10" : "hover:bg-white/10",
     "text-white no-underline cursor-pointer",
   ].join(" ");

@@ -77,7 +77,7 @@ function App() {
             ></div>
             <div className="flex flex-col items-start">
               <h4 className="text-white text-md font-medium">Josie Ko</h4>
-              <p className="text-xs text-white font-medium">
+              <p className="text-xs text-white/60 font-medium">
                 Fullstack Developer
               </p>
             </div>
