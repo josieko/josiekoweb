@@ -25,7 +25,7 @@ export default function curriculumVitae() {
             <h3 className="text-xl font-bold text-white">
               Full Stack Developer
             </h3>
-            <div className="flex flex-wrap gap-2 text-sm text-gray-600 dark:text-gray-400 mb-2">
+            <div className="flex flex-wrap gap-2 text-sm text-gray-400 mb-2">
               <span className="font-medium">Healstack</span>
               <span>•</span>
               <span>London, UK</span>
@@ -33,7 +33,7 @@ export default function curriculumVitae() {
               <span>2023-Present</span>
             </div>
           </div>
-          <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+          <ul className="list-disc pl-6 space-y-2 text-gray-300">
             <li>
               Architected enterprise-level device registration system using{" "}
               <span className="text-white font-medium">AWS Amplify</span> and{" "}
@@ -72,7 +72,7 @@ export default function curriculumVitae() {
             <h3 className="text-xl font-bold text-white">
               Frontend Developer & UX Designer
             </h3>
-            <div className="flex flex-wrap gap-2 text-sm text-gray-600 dark:text-gray-400 mb-2">
+            <div className="flex flex-wrap gap-2 text-sm text-gray-400 mb-2">
               <span className="font-medium">Healstack</span>
               <span>•</span>
               <span>London, UK</span>
@@ -80,11 +80,11 @@ export default function curriculumVitae() {
               <span>2021-2023</span>
             </div>
           </div>
-          <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+          <ul className="list-disc pl-6 space-y-2 text-gray-300">
             <li>
-              Gathered <span className="font-medium">200+</span> detailed
-              requirements through customer interviews for new loyalty app
-              development
+              Gathered <span className="font-medium text-white">200+</span>{" "}
+              detailed requirements through customer interviews for new loyalty
+              app development
             </li>
             <li>
               Created user flows, wireframes and prototypes in collaboration
@@ -92,8 +92,8 @@ export default function curriculumVitae() {
             </li>
             <li>
               Managed product backlogs with{" "}
-              <span className="font-medium">100+</span> user stories, creating
-              clear development roadmaps
+              <span className="font-medium text-white">100+</span> user stories,
+              creating clear development roadmaps
             </li>
             <li>
               Collaborated with stakeholders to align feature priorities with
@@ -107,7 +107,7 @@ export default function curriculumVitae() {
             <h3 className="text-xl font-bold text-white">
               Product Management Trainee
             </h3>
-            <div className="flex flex-wrap gap-2 text-sm text-gray-600 dark:text-gray-400 mb-2">
+            <div className="flex flex-wrap gap-2 text-sm text-gray-400 mb-2">
               <span className="font-medium">Code First Girls Bootcamp</span>
               <span>•</span>
               <span>London, UK</span>
@@ -115,7 +115,7 @@ export default function curriculumVitae() {
               <span>2021</span>
             </div>
           </div>
-          <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+          <ul className="list-disc pl-6 space-y-2 text-gray-300">
             <li>
               Led team project using{" "}
               <span className="text-white font-medium">Jira</span> for agile
