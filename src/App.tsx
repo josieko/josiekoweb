@@ -3,7 +3,7 @@ import aboutHome from "./pages/home";
 import postsHome from "./pages/postsHome";
 import curriculumVitae from "./pages/cv";
 import NavItem from "./components/navItem";
-import { FileText, BookOpen, Github, Linkedin, Mail } from "lucide-react";
+import { FileText, Github, Linkedin } from "lucide-react";
 import "./App.css";
 
 function App() {
