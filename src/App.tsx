@@ -1,15 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import aboutHome from "./pages/home";
 import postsHome from "./pages/postsHome";
 import curriculumVitae from "./pages/cv";
 import NavItem from "./components/navItem";
 import { FileText, Github, Linkedin } from "lucide-react";
+import profileImage from "./assets/josie.png";
+import backgroundImage from "./assets/background.jpg";
 import "./App.css";
 
 function App() {
   const [currentPage, setCurrentPage] = useState("about");
 
-  // Define navigation items in a structured way
+  useEffect(() => {
+    document.body.style.backgroundImage = `url(${backgroundImage})`;
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundPosition = "center";
+    document.body.style.backgroundRepeat = "no-repeat";
+  }, []);
+
   const navItems = [
     {
       name: "CV",
@@ -63,7 +71,10 @@ function App() {
             className={`profile ${currentPage === "about" ? "active" : ""}`}
             onClick={() => setCurrentPage("about")}
           >
-            <div className="profile-icon"></div>
+            <div
+              className="profile-icon"
+              style={{ backgroundImage: `url(${profileImage})` }}
+            ></div>
             <div className="flex flex-col items-start">
               <h4 className="text-white text-md font-medium">Josie Ko</h4>
               <p className="text-xs text-white font-medium">

@@ -1,9 +1,11 @@
+import josieImage from '../assets/josie.png';
+
 export default function aboutHome() {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col p-6 gap-1 items-center  rounded-lg">
         <img
-          src="/src/assets/josie.png"
+          src={josieImage}
           alt="Josie Ko"
           className="w-24 h-24 rounded-full"
         />
