@@ -3,7 +3,16 @@ import aboutHome from "./pages/home";
 import postsHome from "./pages/postsHome";
 import curriculumVitae from "./pages/cv";
 import NavItem from "./components/navItem";
-import { FileText, Github, Linkedin } from "lucide-react";
+import {
+  FileText,
+  Github,
+  Linkedin,
+  Link,
+  ChevronRight,
+  Play,
+  Pause,
+  FastForward,
+} from "lucide-react";
 import profileImage from "./assets/josie.png";
 import backgroundImage from "./assets/background.jpg";
 import "./App.css";
@@ -23,6 +32,8 @@ function App() {
       name: "CV",
       color: "linear-gradient(135deg,rgb(113, 234, 168),rgb(38, 161, 46))",
       icon: FileText,
+      iconRight: ChevronRight,
+      rightIconColor: "white",
       url: undefined,
       isActive: currentPage === "cv",
       onClick: () => setCurrentPage("cv"),
@@ -31,14 +42,39 @@ function App() {
     //   name: "Posts",
     //   color: "linear-gradient(135deg,rgb(246, 168, 59), #ff5e3a)",
     //   icon: BookOpen,
+    //   iconRight: ChevronRight,
+    //   rightIconColor: "white",
     //   url: undefined,
     //   isActive: currentPage === "posts",
     //   onClick: () => setCurrentPage("posts"),
     // },
+    // {
+    //   name: "GitHub",
+    //   color: "linear-gradient(135deg,rgb(206, 123, 242),rgb(150, 47, 218))",
+    //   icon: Github,
+    //   iconRight: Link,
+    //   rightIconColor: "white",
+    //   url: "https://github.com/josieko",
+    //   isActive: false,
+    // },
+    // {
+    //   name: "LinkedIn",
+    //   color: "linear-gradient(135deg,rgb(115, 153, 250),rgb(8, 59, 191))",
+    //   icon: Linkedin,
+    //   iconRight: Link,
+    //   rightIconColor: "white",
+    //   url: "https://www.linkedin.com/in/jojosieko",
+    //   isActive: false,
+    // },
+  ];
+
+  const navLinks = [
     {
       name: "GitHub",
       color: "linear-gradient(135deg,rgb(206, 123, 242),rgb(150, 47, 218))",
       icon: Github,
+      iconRight: Link,
+      rightIconColor: "white",
       url: "https://github.com/josieko",
       isActive: false,
     },
@@ -46,6 +82,8 @@ function App() {
       name: "LinkedIn",
       color: "linear-gradient(135deg,rgb(115, 153, 250),rgb(8, 59, 191))",
       icon: Linkedin,
+      iconRight: Link,
+      rightIconColor: "white",
       url: "https://www.linkedin.com/in/jojosieko",
       isActive: false,
     },
@@ -53,6 +91,8 @@ function App() {
     //   name: "Email",
     //   color: "linear-gradient(135deg,rgb(224, 176, 45),rgb(194, 144, 8))",
     //   icon: Mail,
+    //   iconRight: Link,
+    //   rightIconColor: "white",
     //   url: "mailto:josieko@gmail.com",
     //   isActive: false,
     // },
@@ -63,9 +103,20 @@ function App() {
       <div className="window-content">
         <div className="sidebar">
           <div className="window-controls">
-            <div className="control close"></div>
-            <div className="control minimize"></div>
-            <div className="control maximize"></div>
+            <div className="control close">
+              <Pause size={8} className="control-icon" fill="#69120A" />
+            </div>
+            <div className="control minimize">
+              <FastForward size={8} className="control-icon" fill="#8E591D" />
+            </div>
+            <div className="control maximize">
+              <Play size={8} className="control-icon" fill="#004D00" />
+            </div>
+          </div>
+          <div>
+            <p className="text-3xl color-white font-bold text-left ml-3 pb-2 welcome-title">
+              Welcome
+            </p>
           </div>
           <div
             className={`profile ${currentPage === "about" ? "active" : ""}`}
@@ -82,16 +133,32 @@ function App() {
               </p>
             </div>
           </div>
-          <nav className="nav-links flex flex-col px-2">
+          <nav className="nav-links flex flex-col px-2 mt-4">
             {navItems.map((item, index) => (
               <NavItem
                 key={index}
                 name={item.name}
                 color={item.color}
                 icon={item.icon}
+                rightIcon={item.iconRight}
+                rightIconColor={item.rightIconColor}
                 url={item.url}
                 isActive={item.isActive}
                 onClick={item.onClick}
+              />
+            ))}
+          </nav>
+          <nav className="nav-links flex flex-col px-2 mt-4">
+            {navLinks.map((item, index) => (
+              <NavItem
+                key={index}
+                name={item.name}
+                color={item.color}
+                icon={item.icon}
+                rightIcon={item.iconRight}
+                rightIconColor={item.rightIconColor}
+                url={item.url}
+                isActive={item.isActive}
               />
             ))}
           </nav>
