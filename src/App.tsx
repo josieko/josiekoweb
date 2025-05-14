@@ -102,7 +102,10 @@ function App() {
     <div className="mac-window">
       <div className="window-content">
         <div className="sidebar">
-          <div className="window-controls">
+          <div
+            className="window-controls"
+            onClick={() => alert("Music feature coming soon! 🎧")}
+          >
             <div className="control close">
               <Pause size={8} className="control-icon" fill="#69120A" />
             </div>
