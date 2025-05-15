@@ -1,4 +1,5 @@
 import josieImage from "../assets/josie.png";
+import Mailto from "../components/Mailto";
 
 export default function aboutHome() {
   return (
@@ -31,7 +32,13 @@ export default function aboutHome() {
           across diverse industries from healthcare to B2B platforms, and I'm
           always excited to tackle new challenges.
         </p>
-        <p className="text-sm py-4">Let's have a chat 🍵</p>
+        <Mailto
+          email="josie@kuelabs.co"
+          subject="Here for a chat 🍵"
+          className="text-sm py-4 cursor-pointer font-bold inline-block transition-all duration-200 hover:scale-110 text-white hover:text-[#E8A37C] origin-left"
+        >
+          Let's have a chat 🍵
+        </Mailto>
       </div>
     </div>
   );
