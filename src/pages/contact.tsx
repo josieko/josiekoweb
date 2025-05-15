@@ -68,14 +68,15 @@ export default function Contact({
       <section className="mb-12">
         <div className="mb-6 text-left px-6">
           {isSent ? (
-            <div className="text-center py-8 bg-[#35322d] p-6 rounded-lg max-w-md mx-auto">
+            <div className="text-center py-8 p-6 rounded-lg max-w-md mx-auto">
               <p className="text-xl text-white mb-2">
                 Thanks for reaching out!
               </p>
-              <p className="text-white">I'll get back to you soon.</p>
+              <p className="text-white text-sm">Will get back to you soon.</p>
+              <p className="text-white text-2xl pt-2">👩🏻‍💻</p>
             </div>
           ) : (
-            <div className="bg-[#35322d] p-6 rounded-lg max-w-md mx-auto">
+            <div className="p-6 rounded-lg max-w-md mx-auto">
               <form ref={formRef} onSubmit={handleSubmit}>
                 <div className="mb-4">
                   <input

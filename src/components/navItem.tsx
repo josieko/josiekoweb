@@ -32,7 +32,7 @@ const NavItem: React.FC<NavItemProps> = ({
   const RightIcon = rightIcon
     ? (rightIcon as React.ComponentType<{
         size?: number;
-        rightIconColor?: string;
+        color?: string;
       }>)
     : null;
 
@@ -48,7 +48,7 @@ const NavItem: React.FC<NavItemProps> = ({
         {name}
       </span>
       <span className="nav-right-icon">
-        {RightIcon && <RightIcon size={16} rightIconColor="#ffffff" />}
+        {RightIcon && <RightIcon size={16} color="#ffffff" />}
       </span>
     </div>
   );
