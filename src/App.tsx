@@ -3,6 +3,7 @@ import aboutHome from "./pages/home";
 import postsHome from "./pages/postsHome";
 import curriculumVitae from "./pages/cv";
 import Contact from "./pages/contact";
+import LoadingScreen from "./components/LoadingScreen";
 import NavItem from "./components/navItem";
 import {
   FileText,
@@ -21,6 +22,15 @@ import "./App.css";
 
 function App() {
   const [currentPage, setCurrentPage] = useState("about");
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     document.body.style.backgroundImage = `url(${backgroundImage})`;
@@ -85,6 +95,7 @@ function App() {
 
   return (
     <div className="mac-window">
+      <LoadingScreen isLoading={isLoading} />
       <div className="window-content">
         <div className="sidebar">
           <div
