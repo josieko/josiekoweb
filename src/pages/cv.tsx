@@ -1,4 +1,4 @@
-import { Mail } from "lucide-react";
+import { FileText } from "lucide-react";
 
 export default function curriculumVitae() {
   return (
@@ -11,7 +11,7 @@ export default function curriculumVitae() {
               "linear-gradient(135deg,rgb(113, 234, 168),rgb(38, 161, 46))",
           }}
         >
-          <Mail className="h-12 w-12 text-white" />
+          <FileText className="h-12 w-12 text-white" />
         </div>
         <h1 className="!text-3xl font-bold text-white">Curriculum Vitae</h1>
         <p className="text-gray-400 text-center mt-2">

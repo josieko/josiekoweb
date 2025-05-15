@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import aboutHome from "./pages/home";
 import postsHome from "./pages/postsHome";
 import curriculumVitae from "./pages/cv";
+import Contact from "./pages/contact";
 import NavItem from "./components/navItem";
 import {
   FileText,
@@ -12,6 +13,7 @@ import {
   Play,
   Pause,
   FastForward,
+  Mail,
 } from "lucide-react";
 import profileImage from "./assets/josie.png";
 import backgroundImage from "./assets/background.jpg";
@@ -38,6 +40,16 @@ function App() {
       isActive: currentPage === "cv",
       onClick: () => setCurrentPage("cv"),
     },
+    {
+      name: "Mail",
+      color: "linear-gradient(135deg,rgb(247, 171, 124),rgb(222, 126, 67))",
+      icon: Mail,
+      iconRight: ChevronRight,
+      rightIconColor: "white",
+      url: undefined,
+      isActive: currentPage === "contact",
+      onClick: () => setCurrentPage("contact"),
+    },
     // {
     //   name: "Posts",
     //   color: "linear-gradient(135deg,rgb(246, 168, 59), #ff5e3a)",
@@ -47,24 +59,6 @@ function App() {
     //   url: undefined,
     //   isActive: currentPage === "posts",
     //   onClick: () => setCurrentPage("posts"),
-    // },
-    // {
-    //   name: "GitHub",
-    //   color: "linear-gradient(135deg,rgb(206, 123, 242),rgb(150, 47, 218))",
-    //   icon: Github,
-    //   iconRight: Link,
-    //   rightIconColor: "white",
-    //   url: "https://github.com/josieko",
-    //   isActive: false,
-    // },
-    // {
-    //   name: "LinkedIn",
-    //   color: "linear-gradient(135deg,rgb(115, 153, 250),rgb(8, 59, 191))",
-    //   icon: Linkedin,
-    //   iconRight: Link,
-    //   rightIconColor: "white",
-    //   url: "https://www.linkedin.com/in/jojosieko",
-    //   isActive: false,
     // },
   ];
 
@@ -87,15 +81,6 @@ function App() {
       url: "https://www.linkedin.com/in/jojosieko",
       isActive: false,
     },
-    // {
-    //   name: "Email",
-    //   color: "linear-gradient(135deg,rgb(224, 176, 45),rgb(194, 144, 8))",
-    //   icon: Mail,
-    //   iconRight: Link,
-    //   rightIconColor: "white",
-    //   url: "mailto:josieko@gmail.com",
-    //   isActive: false,
-    // },
   ];
 
   return (
@@ -169,9 +154,12 @@ function App() {
 
         <div className="content-area">
           <div className="content-body">
-            {currentPage === "about" && aboutHome()}
+            {currentPage === "about" && aboutHome({ setCurrentPage })}
             {currentPage === "posts" && postsHome()}
             {currentPage === "cv" && curriculumVitae()}
+            {currentPage === "contact" && (
+              <Contact setCurrentPage={setCurrentPage} />
+            )}
           </div>
         </div>
       </div>
