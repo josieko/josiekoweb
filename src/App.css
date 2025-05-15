@@ -302,14 +302,15 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: none;
+    padding-inline: 0;
     margin: 24px 12px 6px 12px;
-    border-radius: 12px;
+    border-radius: 6px;
     background-color: rgb(57, 57, 57);
   }
 
   .nav-left {
     gap: 12px;
+    padding-inline: 8px;
   }
 
   .nav-icon {
