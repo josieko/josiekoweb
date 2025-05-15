@@ -308,6 +308,10 @@
     background-color: rgb(57, 57, 57);
   }
 
+  .nav-left {
+    gap: 12px;
+  }
+
   .nav-icon {
     width: 16px;
     height: 16px;
