@@ -236,7 +236,7 @@
 @media (max-width: 764px) {
   body {
     background-image: none !important;
-    background-color: #242424;
+    background-color: #070707;
   }
 
   #root {
@@ -278,7 +278,7 @@
     overflow-y: auto;
     width: 100%;
     box-sizing: border-box;
-    background-color: rgba(40, 40, 40, 1);
+    background-color: #070707;
     margin-bottom: 74px;
   }
 
@@ -286,6 +286,7 @@
     width: 100%;
     border-right: none;
     margin-top: 54px;
+    background-color: #070707;
   }
 
   .sidebar:before {
