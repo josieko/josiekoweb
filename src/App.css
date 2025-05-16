@@ -234,7 +234,7 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 764px) {
+@media (max-width: 950px) {
   body {
     background-image: none !important;
     background-color: #070707;
