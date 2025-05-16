@@ -10,7 +10,6 @@ import {
   Github,
   Linkedin,
   Link,
-  ChevronRight,
   Play,
   Pause,
   FastForward,
@@ -18,11 +17,14 @@ import {
 } from "lucide-react";
 import profileImage from "./assets/josie.png";
 import backgroundImage from "./assets/background.jpg";
+import MobileNavItem from "./components/mobile/mobileNavItem";
 import "./App.css";
+import MobileAboutHome from "./components/mobile/mobileAboutHome";
 
 function App() {
   const [currentPage, setCurrentPage] = useState("about");
   const [isLoading, setIsLoading] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -39,26 +41,33 @@ function App() {
     document.body.style.backgroundRepeat = "no-repeat";
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 764);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const navItems = [
     {
       name: "CV",
-      color: "linear-gradient(135deg,rgb(113, 234, 168),rgb(38, 161, 46))",
       icon: FileText,
-      iconRight: ChevronRight,
-      rightIconColor: "white",
-      url: undefined,
+      color: "linear-gradient(135deg,rgb(113, 234, 168),rgb(38, 161, 46))",
       isActive: currentPage === "cv",
       onClick: () => setCurrentPage("cv"),
+      children: curriculumVitae(),
     },
     {
       name: "Mail",
-      color: "linear-gradient(135deg,rgb(247, 171, 124),rgb(222, 126, 67))",
       icon: Mail,
-      iconRight: ChevronRight,
-      rightIconColor: "white",
-      url: undefined,
+      color: "linear-gradient(135deg,rgb(247, 171, 124),rgb(222, 126, 67))",
       isActive: currentPage === "contact",
       onClick: () => setCurrentPage("contact"),
+      children: <Contact setCurrentPage={setCurrentPage} />,
     },
     // {
     //   name: "Posts",
@@ -119,39 +128,55 @@ function App() {
                 </div>
               </div>
               <div>
-                <p className="text-3xl text-white font-bold text-left ml-3 pb-2 welcome-title">
+                <p className="text-4xl text-white font-bold text-left ml-3 pb-2 welcome-title">
                   Welcome
                 </p>
               </div>
-              <div
-                className={`profile ${currentPage === "about" ? "active" : ""}`}
-                onClick={() => setCurrentPage("about")}
-              >
-                <div
-                  className="profile-icon"
-                  style={{ backgroundImage: `url(${profileImage})` }}
-                ></div>
-                <div className="flex flex-col items-start">
-                  <h4 className="text-white text-md font-medium">Josie Ko</h4>
-                  <p className="text-xs text-white/60 font-medium">
-                    Fullstack Developer
-                  </p>
+              {isMobile ? (
+                <div className="mobile-profile">
+                  <MobileAboutHome setCurrentPage={setCurrentPage} />
                 </div>
-              </div>
+              ) : (
+                <div
+                  className={`profile ${
+                    currentPage === "about" ? "active" : ""
+                  }`}
+                  onClick={() => setCurrentPage("about")}
+                >
+                  <div
+                    className="profile-icon"
+                    style={{ backgroundImage: `url(${profileImage})` }}
+                  ></div>
+                  <div className="flex flex-col items-start">
+                    <h4 className="text-white text-md font-medium">Josie Ko</h4>
+                    <p className="text-xs text-white/60 font-medium">
+                      Fullstack Developer
+                    </p>
+                  </div>
+                </div>
+              )}
               <nav className="nav-links flex flex-col px-2 mt-4">
-                {navItems.map((item, index) => (
-                  <NavItem
-                    key={index}
-                    name={item.name}
-                    color={item.color}
-                    icon={item.icon}
-                    rightIcon={item.iconRight}
-                    rightIconColor={item.rightIconColor}
-                    url={item.url}
-                    isActive={item.isActive}
-                    onClick={item.onClick}
-                  />
-                ))}
+                {navItems.map((item, index) =>
+                  isMobile ? (
+                    <div key={index}>
+                      <MobileNavItem
+                        name={item.name}
+                        color={item.color}
+                        icon={item.icon}
+                        children={item.children}
+                      />
+                    </div>
+                  ) : (
+                    <NavItem
+                      key={index}
+                      name={item.name}
+                      color={item.color}
+                      icon={item.icon}
+                      isActive={item.isActive}
+                      onClick={item.onClick}
+                    />
+                  )
+                )}
               </nav>
               <nav className="nav-links flex flex-col px-2 mt-4">
                 {navLinks.map((item, index) => (
@@ -169,16 +194,18 @@ function App() {
               </nav>
             </div>
 
-            <div className="content-area">
-              <div className="content-body">
-                {currentPage === "about" && aboutHome({ setCurrentPage })}
-                {currentPage === "posts" && postsHome()}
-                {currentPage === "cv" && curriculumVitae()}
-                {currentPage === "contact" && (
-                  <Contact setCurrentPage={setCurrentPage} />
-                )}
+            {!isMobile && (
+              <div className="content-area">
+                <div className="content-body">
+                  {currentPage === "about" && aboutHome({ setCurrentPage })}
+                  {currentPage === "posts" && postsHome()}
+                  {currentPage === "cv" && curriculumVitae()}
+                  {currentPage === "contact" && (
+                    <Contact setCurrentPage={setCurrentPage} />
+                  )}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       )}

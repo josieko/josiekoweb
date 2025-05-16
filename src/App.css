@@ -295,18 +295,6 @@
     box-shadow: none;
   }
 
-  .profile {
-    padding: 12px;
-    margin-inline: 12px;
-  }
-
-  .profile.active {
-    cursor: pointer;
-    background-color: #1c1c1e;
-    border-radius: 6px;
-    margin: 0 15px 6px 15px;
-  }
-
   .nav-links {
     flex-direction: column;
     overflow-x: auto;
@@ -319,9 +307,34 @@
     background-color: rgb(57, 57, 57);
   }
 
+  .mobile-profile {
+    flex-direction: column;
+    overflow-x: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-inline: 0;
+    margin: 2px 15px 6px 15px;
+    border-radius: 6px;
+    background-color: #1c1c1e;
+  }
+
+  .profile.active {
+    background-color: #1c1c1e;
+    padding: 4px;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profile.active .profile-icon {
+    height: 64px;
+    width: 64px;
+  }
+
   .nav-left {
     gap: 12px;
-    padding-inline: 8px;
+    padding-inline: 4px;
   }
 
   .nav-icon {
@@ -339,9 +352,23 @@
     background-color: #1c1c1e;
   }
 
+  .mobile-nav-content {
+    padding: 15px;
+    background-color: #1c1c1e;
+    border-bottom: 0.5px #3d3c41 solid;
+  }
+
+  .accordion-trigger[data-state="open"] {
+    background-color: #1c1c1e;
+  }
+
+  .accordion-content {
+    padding: 0;
+  }
+
   .mobile-nav-item-wrapper {
     gap: 12px;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
   }
 

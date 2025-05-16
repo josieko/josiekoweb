@@ -1,6 +1,12 @@
 import React from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
 
-interface NavItemProps {
+interface MobileNavItemProps {
   name: string;
   color: string;
   icon?: React.ComponentType<{ size?: number; color?: string }>;
@@ -9,23 +15,16 @@ interface NavItemProps {
     color?: string;
     strokeWidth?: number;
   }>;
-  rightIconColor?: string;
-  url?: string;
-  isActive?: boolean;
-  onClick?: () => void;
+  children?: React.ReactNode;
 }
 
-const NavItem: React.FC<NavItemProps> = ({
+const MobileNavItem: React.FC<MobileNavItemProps> = ({
   name,
   color,
   icon,
   rightIcon,
-  url,
-  isActive = false,
-  onClick,
+  children,
 }) => {
-  const isExternalLink = url?.startsWith("http");
-
   const IconComponent = icon
     ? (icon as React.ComponentType<{
         size?: number;
@@ -55,38 +54,25 @@ const NavItem: React.FC<NavItemProps> = ({
         </span>
       </div>
       {RightIcon && (
-        <span className="nav-right-icon ml-auto mr-1.5">
+        <span className="nav-right-icon ml-auto">
           <RightIcon size={17} color="#545456" strokeWidth={3} />
         </span>
       )}
     </div>
   );
 
-  const tailwindClasses = [
-    "flex items-center py-1 px-2 rounded-sm text-sm whitespace-nowrap transition-colors mobile-nav-item",
-    isActive ? "bg-blue-200/10" : "",
-    "text-white no-underline cursor-pointer",
-  ].join(" ");
-
-  if (url && isExternalLink) {
-    return (
-      <a
-        href={url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={tailwindClasses}
-        onClick={onClick}
-      >
-        {content}
-      </a>
-    );
-  }
-
   return (
-    <div className={tailwindClasses} onClick={onClick}>
-      {content}
-    </div>
+    <Accordion type="single" collapsible className="w-full">
+      <AccordionItem value={name}>
+        <AccordionTrigger className="mobile-nav-item">
+          {content}
+        </AccordionTrigger>
+        <AccordionContent>
+          <div className="mobile-nav-content">{children}</div>
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
   );
 };
 
-export default NavItem;
+export default MobileNavItem;
