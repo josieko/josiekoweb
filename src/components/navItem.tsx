@@ -45,7 +45,7 @@ const NavItem: React.FC<NavItemProps> = ({
     <div className="flex flex-row items-center justify-between w-full mobile-nav-item-wrapper">
       <div className="flex flex-row items-center nav-left">
         <span
-          className="flex justify-center items-center w-6 h-6 rounded-md mr-2 mobile-icon"
+          className="flex justify-center items-center w-6 h-6 rounded-sm mr-2 mobile-icon"
           style={{ background: color }}
         >
           {IconComponent && <IconComponent size={16} color="#ffffff" />}
