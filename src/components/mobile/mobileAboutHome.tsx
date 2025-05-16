@@ -21,8 +21,8 @@ export default function MobileAboutHome({
 
   return (
     <Accordion type="single" collapsible className="w-full">
-      <AccordionItem value="about">
-        <AccordionTrigger className="mobile-nav-item !border-none">
+      <AccordionItem value="about ">
+        <AccordionTrigger className="mobile-nav-home !border-none">
           <div
             className={`profile ${currentPage === "about" ? "active" : ""}`}
             onClick={() => handlePageChange("about")}

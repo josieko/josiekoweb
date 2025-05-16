@@ -297,7 +297,7 @@
 
   .nav-links {
     flex-direction: column;
-    overflow-x: auto;
+    overflow: hidden;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -342,7 +342,7 @@
     height: 16px;
   }
 
-  .mobile-nav-item {
+  .mobile-nav-home {
     flex-direction: row;
     align-items: center;
     padding: 12px 8px 12px 8px;
@@ -352,10 +352,46 @@
     background-color: #1c1c1e;
   }
 
+  .mobile-nav-item {
+    flex-direction: row;
+    align-items: center;
+    padding: 12px 8px 12px 8px;
+    min-width: 60px;
+    border-radius: 0;
+    background-color: #1c1c1e;
+    position: relative;
+  }
+
+  .mobile-nav-item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: calc(12px + 24px + 8px);
+    width: calc(100% - (2px + 24px + 8px + 8px));
+    height: 0.5px;
+    background-color: #3d3c41;
+    transition: all 0.2s ease;
+  }
+
+  .mobile-nav-item[data-state="open"]::after {
+    left: 0;
+    width: 100%;
+  }
+
   .mobile-nav-content {
     padding: 15px;
     background-color: #1c1c1e;
-    border-bottom: 0.5px #3d3c41 solid;
+    position: relative;
+  }
+
+  .mobile-nav-content::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.5px;
+    background-color: #3d3c41;
   }
 
   .accordion-trigger[data-state="open"] {
