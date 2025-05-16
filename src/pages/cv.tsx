@@ -14,7 +14,7 @@ export default function curriculumVitae() {
           <FileText className="h-12 w-12 text-white" />
         </div>
         <h1 className="!text-3xl font-bold text-white">Curriculum Vitae</h1>
-        <p className="text-white/60 text-center mt-2">
+        <p className="text-white/70 text-center mt-2">
           Professional experience, education, and skills
         </p>
       </div>
@@ -25,7 +25,7 @@ export default function curriculumVitae() {
             <h3 className="text-xl font-bold text-white">
               Full Stack Developer
             </h3>
-            <div className="flex flex-wrap gap-2 text-sm text-white/60 mb-2">
+            <div className="flex flex-wrap gap-2 text-sm text-white/70 mb-2">
               <span className="font-medium">Healstack</span>
               <span>•</span>
               <span>London, UK</span>
@@ -33,7 +33,7 @@ export default function curriculumVitae() {
               <span>2023-Present</span>
             </div>
           </div>
-          <ul className="list-disc pl-6 space-y-2 text-white/80">
+          <ul className="list-disc pl-6 space-y-2 text-white/90">
             <li>
               Architected enterprise-level device registration system using{" "}
               <span className="text-white font-medium">AWS Amplify</span> and{" "}
@@ -72,7 +72,7 @@ export default function curriculumVitae() {
             <h3 className="text-xl font-bold text-white">
               Frontend Developer & UX Designer
             </h3>
-            <div className="flex flex-wrap gap-2 text-sm text-white/60 mb-2">
+            <div className="flex flex-wrap gap-2 text-sm text-white/70 mb-2">
               <span className="font-medium">Healstack</span>
               <span>•</span>
               <span>London, UK</span>
@@ -80,7 +80,7 @@ export default function curriculumVitae() {
               <span>2021-2023</span>
             </div>
           </div>
-          <ul className="list-disc pl-6 space-y-2 text-white/80">
+          <ul className="list-disc pl-6 space-y-2 text-white/90">
             <li>
               Gathered <span className="font-medium text-white">200+</span>{" "}
               detailed requirements through customer interviews for new loyalty
@@ -107,7 +107,7 @@ export default function curriculumVitae() {
             <h3 className="text-xl font-bold text-white">
               Product Management Trainee
             </h3>
-            <div className="flex flex-wrap gap-2 text-sm text-white/60 mb-2">
+            <div className="flex flex-wrap gap-2 text-sm text-white/70 mb-2">
               <span className="font-medium">Code First Girls Bootcamp</span>
               <span>•</span>
               <span>London, UK</span>
@@ -115,7 +115,7 @@ export default function curriculumVitae() {
               <span>2021</span>
             </div>
           </div>
-          <ul className="list-disc pl-6 space-y-2 text-white/80">
+          <ul className="list-disc pl-6 space-y-2 text-white/90">
             <li>
               Led team project using{" "}
               <span className="text-white font-medium">Jira</span> for agile
@@ -147,7 +147,7 @@ export default function curriculumVitae() {
         <h2 className="text-2xl font-semibold text-white text-left border-b-1 border-white pb-2 mb-6">
           Education & Certifications
         </h2>
-        <ul className="list-disc text-left pl-6 space-y-3 text-white/80">
+        <ul className="list-disc text-left pl-6 space-y-3 text-white/90">
           <li className="transition-colors duration-200">
             Engineering Academy Certificate,{" "}
             <span className="font-medium">McKinsey & Company</span> (2023)
