@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import { Mail } from "lucide-react";
 
@@ -15,16 +14,33 @@ export default function Contact({
   const [isSent, setIsSent] = useState(false);
   const formRef = React.useRef<HTMLFormElement>(null);
 
+  useEffect(() => {
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    if (publicKey) {
+      emailjs.init(publicKey);
+    } else {
+      console.error("EmailJS public key is missing");
+    }
+  }, []);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSending(true);
 
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId) {
+      console.error("EmailJS configuration is incomplete");
+      alert(
+        "Email service is not properly configured. Please contact the administrator."
+      );
+      setIsSending(false);
+      return;
+    }
 
     emailjs
-      .sendForm(serviceId, templateId, formRef.current!, publicKey)
+      .sendForm(serviceId, templateId, formRef.current!)
       .then((result) => {
         console.log("Email sent successfully:", result.text);
         setIsSending(false);
@@ -111,7 +127,7 @@ export default function Contact({
                     name="message"
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    className="w-full p-2 px-4 rounded bg-[#242424] text-white border border-[#242424] focus:border-[#E8A37C] focus:outline-none [&:-webkit-autofill]:bg-[#242424] [&:-webkit-autofill]:text-white [&:-webkit-autofill]:[box-shadow:0_0_0_1000px_#242424_inset]"
+                    className="resize-none w-full p-2 px-4 rounded bg-[#242424] text-white border border-[#242424] focus:border-[#E8A37C] focus:outline-none [&:-webkit-autofill]:bg-[#242424] [&:-webkit-autofill]:text-white [&:-webkit-autofill]:[box-shadow:0_0_0_1000px_#242424_inset]"
                     rows={4}
                     required
                   />
