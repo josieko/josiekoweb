@@ -108,14 +108,18 @@ function App() {
                   <Pause size={8} className="control-icon" fill="#69120A" />
                 </div>
                 <div className="control minimize">
-                  <FastForward size={8} className="control-icon" fill="#8E591D" />
+                  <FastForward
+                    size={8}
+                    className="control-icon"
+                    fill="#8E591D"
+                  />
                 </div>
                 <div className="control maximize">
                   <Play size={8} className="control-icon" fill="#004D00" />
                 </div>
               </div>
               <div>
-                <p className="text-3xl color-white font-bold text-left ml-3 pb-2 welcome-title">
+                <p className="text-3xl text-white font-bold text-left ml-3 pb-2 welcome-title">
                   Welcome
                 </p>
               </div>

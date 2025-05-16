@@ -1,9 +1,13 @@
 import josieImage from "../assets/josie.png";
 
-export default function AboutHome({ setCurrentPage }: { setCurrentPage?: (page: string) => void }) {
+export default function AboutHome({
+  setCurrentPage,
+}: {
+  setCurrentPage?: (page: string) => void;
+}) {
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex flex-col p-6 gap-1 items-center rounded-lg mobile-home-header">
+      <div className="flex flex-col p-6 gap-1 items-center rounded-lg mobile-home-header text-white">
         <img
           src={josieImage}
           alt="Josie Ko"
@@ -12,7 +16,7 @@ export default function AboutHome({ setCurrentPage }: { setCurrentPage?: (page: 
         <p className="text-2xl font-bold">Hi, I'm Josie</p>
         <p className="text-md">Developer, design enthusiast, matcha lover.</p>
       </div>
-      <div className="text-md rounded-lg px-6 text-left">
+      <div className="text-md text-white rounded-lg px-[15px] text-left">
         <p>
           I'm a Full Stack Developer based in London. I love working with
           JavaScript, Node.js, and React to build web and mobile applications.

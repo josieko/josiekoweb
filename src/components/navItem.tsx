@@ -4,7 +4,11 @@ interface NavItemProps {
   name: string;
   color: string;
   icon?: React.ComponentType<{ size?: number; color?: string }>;
-  rightIcon?: React.ComponentType<{ size?: number; color?: string }>;
+  rightIcon?: React.ComponentType<{
+    size?: number;
+    color?: string;
+    strokeWidth?: number;
+  }>;
   rightIconColor?: string;
   url?: string;
   isActive?: boolean;
@@ -33,6 +37,7 @@ const NavItem: React.FC<NavItemProps> = ({
     ? (rightIcon as React.ComponentType<{
         size?: number;
         color?: string;
+        strokeWidth?: number;
       }>)
     : null;
 
@@ -51,7 +56,7 @@ const NavItem: React.FC<NavItemProps> = ({
       </div>
       {RightIcon && (
         <span className="nav-right-icon ml-auto">
-          <RightIcon size={16} color="#ffffff" />
+          <RightIcon size={17} color="#545456" strokeWidth={3} />
         </span>
       )}
     </div>
