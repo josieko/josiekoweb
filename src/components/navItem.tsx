@@ -37,19 +37,23 @@ const NavItem: React.FC<NavItemProps> = ({
     : null;
 
   const content = (
-    <div className="flex flex-row mobile-nav-item-wrapper">
-      <span
-        className="flex justify-center items-center w-6 h-6 rounded-md mr-2 mobile-icon"
-        style={{ background: color }}
-      >
-        {IconComponent && <IconComponent size={16} color="#ffffff" />}
-      </span>
-      <span className="text-white text-sm whitespace-nowrap mobile-label">
-        {name}
-      </span>
-      <span className="nav-right-icon">
-        {RightIcon && <RightIcon size={16} color="#ffffff" />}
-      </span>
+    <div className="flex flex-row items-center justify-between w-full mobile-nav-item-wrapper">
+      <div className="flex flex-row items-center nav-left">
+        <span
+          className="flex justify-center items-center w-6 h-6 rounded-md mr-2 mobile-icon"
+          style={{ background: color }}
+        >
+          {IconComponent && <IconComponent size={16} color="#ffffff" />}
+        </span>
+        <span className="text-white text-sm whitespace-nowrap mobile-label">
+          {name}
+        </span>
+      </div>
+      {RightIcon && (
+        <span className="nav-right-icon ml-auto">
+          <RightIcon size={16} color="#ffffff" />
+        </span>
+      )}
     </div>
   );
 

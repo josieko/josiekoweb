@@ -3,6 +3,7 @@ import aboutHome from "./pages/home";
 import postsHome from "./pages/postsHome";
 import curriculumVitae from "./pages/cv";
 import Contact from "./pages/contact";
+import LoadingScreen from "./components/LoadingScreen";
 import NavItem from "./components/navItem";
 import {
   FileText,
@@ -21,6 +22,15 @@ import "./App.css";
 
 function App() {
   const [currentPage, setCurrentPage] = useState("about");
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     document.body.style.backgroundImage = `url(${backgroundImage})`;
@@ -84,86 +94,91 @@ function App() {
   ];
 
   return (
-    <div className="mac-window">
-      <div className="window-content">
-        <div className="sidebar">
-          <div
-            className="window-controls"
-            onClick={() => alert("Music feature coming soon! 🎧")}
-          >
-            <div className="control close">
-              <Pause size={8} className="control-icon" fill="#69120A" />
+    <>
+      <LoadingScreen isLoading={isLoading} />
+      {!isLoading && (
+        <div className="mac-window">
+          <div className="window-content">
+            <div className="sidebar">
+              <div
+                className="window-controls"
+                onClick={() => alert("Music feature coming soon! 🎧")}
+              >
+                <div className="control close">
+                  <Pause size={8} className="control-icon" fill="#69120A" />
+                </div>
+                <div className="control minimize">
+                  <FastForward size={8} className="control-icon" fill="#8E591D" />
+                </div>
+                <div className="control maximize">
+                  <Play size={8} className="control-icon" fill="#004D00" />
+                </div>
+              </div>
+              <div>
+                <p className="text-3xl color-white font-bold text-left ml-3 pb-2 welcome-title">
+                  Welcome
+                </p>
+              </div>
+              <div
+                className={`profile ${currentPage === "about" ? "active" : ""}`}
+                onClick={() => setCurrentPage("about")}
+              >
+                <div
+                  className="profile-icon"
+                  style={{ backgroundImage: `url(${profileImage})` }}
+                ></div>
+                <div className="flex flex-col items-start">
+                  <h4 className="text-white text-md font-medium">Josie Ko</h4>
+                  <p className="text-xs text-white/60 font-medium">
+                    Fullstack Developer
+                  </p>
+                </div>
+              </div>
+              <nav className="nav-links flex flex-col px-2 mt-4">
+                {navItems.map((item, index) => (
+                  <NavItem
+                    key={index}
+                    name={item.name}
+                    color={item.color}
+                    icon={item.icon}
+                    rightIcon={item.iconRight}
+                    rightIconColor={item.rightIconColor}
+                    url={item.url}
+                    isActive={item.isActive}
+                    onClick={item.onClick}
+                  />
+                ))}
+              </nav>
+              <nav className="nav-links flex flex-col px-2 mt-4">
+                {navLinks.map((item, index) => (
+                  <NavItem
+                    key={index}
+                    name={item.name}
+                    color={item.color}
+                    icon={item.icon}
+                    rightIcon={item.iconRight}
+                    rightIconColor={item.rightIconColor}
+                    url={item.url}
+                    isActive={item.isActive}
+                  />
+                ))}
+              </nav>
             </div>
-            <div className="control minimize">
-              <FastForward size={8} className="control-icon" fill="#8E591D" />
-            </div>
-            <div className="control maximize">
-              <Play size={8} className="control-icon" fill="#004D00" />
-            </div>
-          </div>
-          <div>
-            <p className="text-3xl color-white font-bold text-left ml-3 pb-2 welcome-title">
-              Welcome
-            </p>
-          </div>
-          <div
-            className={`profile ${currentPage === "about" ? "active" : ""}`}
-            onClick={() => setCurrentPage("about")}
-          >
-            <div
-              className="profile-icon"
-              style={{ backgroundImage: `url(${profileImage})` }}
-            ></div>
-            <div className="flex flex-col items-start">
-              <h4 className="text-white text-md font-medium">Josie Ko</h4>
-              <p className="text-xs text-white/60 font-medium">
-                Fullstack Developer
-              </p>
-            </div>
-          </div>
-          <nav className="nav-links flex flex-col px-2 mt-4">
-            {navItems.map((item, index) => (
-              <NavItem
-                key={index}
-                name={item.name}
-                color={item.color}
-                icon={item.icon}
-                rightIcon={item.iconRight}
-                rightIconColor={item.rightIconColor}
-                url={item.url}
-                isActive={item.isActive}
-                onClick={item.onClick}
-              />
-            ))}
-          </nav>
-          <nav className="nav-links flex flex-col px-2 mt-4">
-            {navLinks.map((item, index) => (
-              <NavItem
-                key={index}
-                name={item.name}
-                color={item.color}
-                icon={item.icon}
-                rightIcon={item.iconRight}
-                rightIconColor={item.rightIconColor}
-                url={item.url}
-                isActive={item.isActive}
-              />
-            ))}
-          </nav>
-        </div>
 
-        <div className="content-area">
-          <div className="content-body">
-            {currentPage === "about" && aboutHome({ setCurrentPage })}
-            {currentPage === "posts" && postsHome()}
-            {currentPage === "cv" && curriculumVitae()}
-            {currentPage === "contact" && (
-              <Contact setCurrentPage={setCurrentPage} />
-            )}
+            <div className="content-area">
+              <div className="content-body">
+                {currentPage === "about" && aboutHome({ setCurrentPage })}
+                {currentPage === "posts" && postsHome()}
+                {currentPage === "cv" && curriculumVitae()}
+                {currentPage === "contact" && (
+                  <Contact setCurrentPage={setCurrentPage} />
+                )}
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 }
 
