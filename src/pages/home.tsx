@@ -1,8 +1,6 @@
 import josieImage from "../assets/josie.png";
-import Mailto from "../components/Mailto";
 
-export default function aboutHome() {
-  const mailing = false;
+export default function AboutHome({ setCurrentPage }: { setCurrentPage?: (page: string) => void }) {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col p-6 gap-1 items-center rounded-lg mobile-home-header">
@@ -33,16 +31,12 @@ export default function aboutHome() {
           across diverse industries from healthcare to B2B platforms, and I'm
           always excited to tackle new challenges.
         </p>
-        <p className="text-md py-4">Let's have a chat 🍵</p>
-        {mailing && (
-          <Mailto
-            email="josie@kuelabs.co"
-            subject="Here for a chat 🍵"
-            className="text-md py-4 cursor-pointer font-bold inline-block transition-all duration-200 hover:scale-110 text-white hover:text-[#E8A37C] origin-left"
-          >
-            Let's have a chat 🍵
-          </Mailto>
-        )}
+        <span
+          onClick={() => setCurrentPage && setCurrentPage("contact")}
+          className="text-md py-4 cursor-pointer font-bold inline-block transition-all duration-100 hover:scale-110 text-white hover:text-[#E8A37C] origin-left"
+        >
+          Let's have a chat 🍵
+        </span>
       </div>
     </div>
   );
