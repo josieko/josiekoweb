@@ -1,8 +1,5 @@
 import { useState, useEffect } from "react";
 import aboutHome from "./pages/home";
-import postsHome from "./pages/postsHome";
-import curriculumVitae from "./pages/cv";
-import Contact from "./pages/contact";
 import NavItem from "./components/navItem";
 import {
   FileText,
@@ -19,6 +16,8 @@ import backgroundImage from "./assets/background.webp";
 import MobileNavItem from "./components/mobile/mobileNavItem";
 import "./App.css";
 import MobileAboutHome from "./components/mobile/mobileAboutHome";
+import Contact from "./pages/contact";
+import CurriculumVitae from "./pages/cv";
 
 function App() {
   const [currentPage, setCurrentPage] = useState("about");
@@ -49,7 +48,7 @@ function App() {
       color: "linear-gradient(135deg,rgb(113, 234, 168),rgb(38, 161, 46))",
       isActive: currentPage === "cv",
       onClick: () => setCurrentPage("cv"),
-      children: curriculumVitae(),
+      children: <CurriculumVitae />,
     },
     {
       name: "Mail",
@@ -59,16 +58,6 @@ function App() {
       onClick: () => setCurrentPage("contact"),
       children: <Contact setCurrentPage={setCurrentPage} />,
     },
-    // {
-    //   name: "Posts",
-    //   color: "linear-gradient(135deg,rgb(246, 168, 59), #ff5e3a)",
-    //   icon: BookOpen,
-    //   iconRight: ChevronRight,
-    //   rightIconColor: "white",
-    //   url: undefined,
-    //   isActive: currentPage === "posts",
-    //   onClick: () => setCurrentPage("posts"),
-    // },
   ];
 
   const navLinks = [
@@ -182,8 +171,7 @@ function App() {
             <div className="content-area">
               <div className="content-body">
                 {currentPage === "about" && aboutHome({ setCurrentPage })}
-                {currentPage === "posts" && postsHome()}
-                {currentPage === "cv" && curriculumVitae()}
+                {currentPage === "cv" && <CurriculumVitae />}
                 {currentPage === "contact" && (
                   <Contact setCurrentPage={setCurrentPage} />
                 )}
