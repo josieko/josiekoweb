@@ -102,9 +102,7 @@ function App() {
             </div>
             {isMobile && (
               <div>
-                <h2 className="text-white font-bold text-left ml-3 pb-2 text-3xl">
-                  Welcome
-                </h2>
+                <h2 className="welcome-text">Welcome</h2>
               </div>
             )}
             {isMobile ? (

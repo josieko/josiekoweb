@@ -4,7 +4,38 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/josie.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Josie Ko - Fullstack Developer. Portfolio showcasing skills and professional experience in web development."
+    />
     <title>Josie Ko</title>
+    <style>
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: local("Inter Regular"), local("Inter-Regular"),
+          url(https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2)
+            format("woff2");
+      }
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: local("Inter Bold"), local("Inter-Bold"),
+          url(https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuFuYAZ9hiA.woff2)
+            format("woff2");
+      }
+      h2.welcome-text {
+        font-size: 2rem;
+        font-weight: 700;
+        color: white;
+        text-align: left;
+        margin-left: 0.85rem;
+      }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,7 +51,7 @@
       />
     </noscript>
   </head>
-  <body class="bg-[url('background.webp')] bg-cover bg-center bg-fixed">
+  <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
