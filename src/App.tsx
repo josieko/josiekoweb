@@ -3,7 +3,6 @@ import aboutHome from "./pages/home";
 import postsHome from "./pages/postsHome";
 import curriculumVitae from "./pages/cv";
 import Contact from "./pages/contact";
-import LoadingScreen from "./components/LoadingScreen";
 import NavItem from "./components/navItem";
 import {
   FileText,
@@ -23,16 +22,7 @@ import MobileAboutHome from "./components/mobile/mobileAboutHome";
 
 function App() {
   const [currentPage, setCurrentPage] = useState("about");
-  const [isLoading, setIsLoading] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, []);
 
   useEffect(() => {
     document.body.style.backgroundImage = `url(${backgroundImage})`;
