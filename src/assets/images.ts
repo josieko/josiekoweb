@@ -1,5 +1,5 @@
 import josieImg from "./josie.webp";
-import backgroundImg from "./background.jpg";
+import backgroundImg from "./background.webp";
 
 export const images = {
   josie: josieImg,

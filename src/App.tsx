@@ -15,7 +15,7 @@ import {
   Mail,
 } from "lucide-react";
 import profileImage from "./assets/josie.webp";
-import backgroundImage from "./assets/background.jpg";
+import backgroundImage from "./assets/background.webp";
 import MobileNavItem from "./components/mobile/mobileNavItem";
 import "./App.css";
 import MobileAboutHome from "./components/mobile/mobileAboutHome";
@@ -111,11 +111,13 @@ function App() {
                 <Play size={8} className="control-icon" fill="#004D00" />
               </div>
             </div>
-            <div>
-              <p className="text-3xl text-white font-bold text-left ml-3 pb-2 welcome-title">
-                Welcome
-              </p>
-            </div>
+            {isMobile && (
+              <div>
+                <h2 className="text-white font-bold text-left ml-3 pb-2 text-3xl">
+                  Welcome
+                </h2>
+              </div>
+            )}
             {isMobile ? (
               <div className="mobile-profile">
                 <MobileAboutHome setCurrentPage={setCurrentPage} />

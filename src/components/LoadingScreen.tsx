@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import backgroundImage from "../assets/background.jpg";
+import backgroundImage from "../assets/background.webp";
 
 interface LoadingScreenProps {
   isLoading: boolean;
