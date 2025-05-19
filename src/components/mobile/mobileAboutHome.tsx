@@ -1,5 +1,5 @@
-import josieImage from "../../assets/josie.png";
-import profileImage from "../../assets/josie.png"; // Add this import
+import josieImage from "../../assets/josie.webp";
+import profileImage from "../../assets/josie.webp";
 import {
   Accordion,
   AccordionItem,

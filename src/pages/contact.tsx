@@ -82,7 +82,7 @@ export default function Contact({
       </div>
 
       <section className="mb-12">
-        <div className="mb-6 text-left px-6">
+        <div className="mb-6 text-left">
           {isSent ? (
             <div className="text-center py-8 p-6 rounded-lg max-w-md mx-auto">
               <p className="text-xl text-white mb-2">
@@ -92,7 +92,7 @@ export default function Contact({
               <p className="text-white text-2xl pt-2">👩🏻‍💻</p>
             </div>
           ) : (
-            <div className="p-6 rounded-lg max-w-md mx-auto">
+            <div className="p-4 rounded-lg max-w-md mx-auto">
               <form ref={formRef} onSubmit={handleSubmit}>
                 <div className="mb-4">
                   <input

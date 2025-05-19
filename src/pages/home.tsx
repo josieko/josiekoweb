@@ -1,4 +1,4 @@
-import josieImage from "../assets/josie.png";
+import josieImage from "../assets/josie.webp";
 
 export default function AboutHome({
   setCurrentPage,

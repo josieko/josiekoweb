@@ -1,9 +1,9 @@
-import josieImg from './josie.png';
-import backgroundImg from './background.jpg';
+import josieImg from "./josie.webp";
+import backgroundImg from "./background.jpg";
 
 export const images = {
   josie: josieImg,
-  background: backgroundImg
+  background: backgroundImg,
 };
 
 export default images;

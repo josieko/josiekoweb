@@ -14,7 +14,7 @@ import {
   FastForward,
   Mail,
 } from "lucide-react";
-import profileImage from "./assets/josie.png";
+import profileImage from "./assets/josie.webp";
 import backgroundImage from "./assets/background.jpg";
 import MobileNavItem from "./components/mobile/mobileNavItem";
 import "./App.css";
@@ -112,7 +112,7 @@ function App() {
               </div>
             </div>
             <div>
-              <p className="text-4xl text-white font-bold text-left ml-3 pb-2 welcome-title">
+              <p className="text-3xl text-white font-bold text-left ml-3 pb-2 welcome-title">
                 Welcome
               </p>
             </div>
