@@ -26,11 +26,50 @@ export default function curriculumVitae() {
               Full Stack Developer
             </h3>
             <div className="flex flex-wrap gap-2 text-sm text-white/70 mb-2">
+              <span className="font-medium">Qwikify</span>
+              <span>•</span>
+              <span>London, UK</span>
+              <span>•</span>
+              <span>2025-Present</span>
+            </div>
+          </div>
+          {/* <ul className="list-disc pl-6 space-y-2 text-white/90">
+            <li>
+              Led team project using{" "}
+              <span className="text-white font-medium">Jira</span> for agile
+              management and{" "}
+              <span className="text-white font-medium">Figma</span> for
+              prototyping
+            </li>
+            <li>
+              Built high-fidelity demo components using{" "}
+              <span className="text-white font-medium">JavaScript</span>,{" "}
+              <span className="text-white font-medium">CSS</span>, and{" "}
+              <span className="text-white font-medium">HTML</span>
+            </li>
+            <li>
+              Developed solutions for{" "}
+              <span className="text-white font-medium">Python</span> programming
+              challenges, demonstrating problem-solving skills
+            </li>
+            <li>
+              Created optimized database schemas using{" "}
+              <span className="text-white font-medium">SQL</span> and{" "}
+              <span className="text-white font-medium">MySQL Workbench</span>
+            </li>
+          </ul> */}
+        </div>
+        <div className="mb-10 text-left px-6">
+          <div className="mb-3">
+            <h3 className="text-xl font-bold text-white">
+              Full Stack Developer
+            </h3>
+            <div className="flex flex-wrap gap-2 text-sm text-white/70 mb-2">
               <span className="font-medium">Healstack</span>
               <span>•</span>
               <span>London, UK</span>
               <span>•</span>
-              <span>2023-Present</span>
+              <span>2023-2025</span>
             </div>
           </div>
           <ul className="list-disc pl-6 space-y-2 text-white/90">
@@ -165,7 +204,7 @@ export default function curriculumVitae() {
           </li>
           <li className="transition-colors duration-200">
             BFA Journalism and Social Sciences,{" "}
-            <span className="font-medium">Zagreb University</span> (2018-2021)
+            <span className="font-medium">Zagreb University</span> (2016-2019)
           </li>
         </ul>
       </section>
